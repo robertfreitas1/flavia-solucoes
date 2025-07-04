@@ -20,8 +20,7 @@
 <div class="page-outer-container">
 	<div class="page-wrapper">
  	
-        <!-- Preloader -->
-        <div class="preloader"></div>
+        
         
         <!-- Main Header -->
         <header class="main-header">
@@ -775,24 +774,25 @@
                     <h2>Faça suas perguntas agora</h2>
                 </div>
                 
-                <div class="default-form">
-                	<form method="post" action="index.html">
-                    	<div class="row clearfix">
-                        	<div class="form-group col-md-6 col-sm-12 col-xs-12">
-                            	<input type="text" name="name" value="" placeholder="Seu nome" required>
-                            </div>
-                            <div class="form-group col-md-6 col-sm-12 col-xs-12">
-                            	<input type="email" name="email" value="" placeholder="Email " required>
-                            </div>
-                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                            	<textarea name="message" placeholder="Suas Duvidas..." required></textarea>
-                            </div>
-                            <div class="form-group text-center col-md-12 col-sm-12 col-xs-12">
-                            	<button type="submit" class="theme-btn btn-style-one">Enviar  </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                <div class="default-form consultation-form">
+      <form method="POST" action="https://script.google.com/macros/s/AKfycbySdrDArmrMiUjK1LBYW3bsxvwGlIfTXlXlnz4PF-jupNH1usEGemqKIkW1OKBmZ4_1/exec" id="contact-form">
+        <div class="row clearfix">
+          <div class="form-group col-md-6 col-sm-12 col-xs-12">
+            <input type="text" name="fname" placeholder="Primeiro nome" required>
+          </div>
+          <div class="form-group col-md-6 col-sm-12 col-xs-12">
+            <input type="text" name="lname" placeholder="Email" required>
+          </div>
+          <div class="form-group col-md-12 col-sm-12 col-xs-12">
+            <textarea name="Message" placeholder="Mensagem" required></textarea>
+          </div>
+          <div class="form-group col-md-12 col-sm-12 col-xs-12">
+            <button type="submit" class="theme-btn btn-style-one">Enviar agora</button>
+          </div>
+        </div>
+      </form>
+      <div id="msg-status" style="margin-top:10px;color:green;font-weight:bold;"></div>
+    </div>
     	  
         	</div>
         </section>
@@ -918,6 +918,7 @@
 <div class="scroll-to-top scroll-to-target" data-target=".main-header"><span class="fa fa-long-arrow-up"></span></div>
 
 <script src="js/jquery.js"></script> 
+<script src="app.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/revolution.min.js"></script>
 <script src="js/jquery.fancybox.pack.js"></script>
