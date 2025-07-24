@@ -412,3 +412,34 @@
 	
 
 })(window.jQuery);
+// ... (seu código atual aqui)
+
+// WhatsApp form
+$(document).ready(function () {
+  $('#formAgendamento').on('submit', function (e) {
+    e.preventDefault();
+
+    var fname = $('#fname').val().trim();
+    var lname = $('#lname').val().trim();
+    var phone = $('#phone').val().trim();
+    var subject = $('#subject').val().trim();
+    var message = $('#message').val().trim();
+
+    if (!fname || !lname || !phone || !subject || !message) {
+      alert('Por favor, preencha todos os campos.');
+      return;
+    }
+
+    var texto = 
+      `*Olá!* \n\n` +
+      `*Nome:* ${fname} ${lname}\n` +
+      `*Assunto:* ${subject}\n` +
+      `*Mensagem:*\n${message}`;
+
+    var numero = '31995992507'; // Exemplo: '5575991123006' (Brasil + DDD + número)
+    var url = 'https://wa.me/' + numero + '?text=' + encodeURIComponent(texto);
+
+    window.open(url, '_blank');
+  });
+});
+
