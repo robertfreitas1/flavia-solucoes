@@ -444,45 +444,51 @@ $(document).ready(function () {
 });
 
   document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("newsletter-form");
+  const form = document.getElementById("newsletter-form");
 
-    if (!form) return;
+  if (!form) return;
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-      // Obter data e hora atual no formato brasileiro
-      const agora = new Date();
-      const dataHora = agora.toLocaleDateString('pt-BR') + ' às ' + agora.toLocaleTimeString('pt-BR');
+    // Obter data e hora atual no formato brasileiro
+    const agora = new Date();
+    const dataHora = agora.toLocaleDateString('pt-BR') + ' às ' + agora.toLocaleTimeString('pt-BR');
 
-      // Preencher o campo oculto
-      document.getElementById("newsletter-horario").value = dataHora;
+    // Preencher o campo oculto
+    document.getElementById("newsletter-horario").value = dataHora;
 
-      const formData = new FormData(form);
-      const submitButton = form.querySelector(".btn-submit");
+    const formData = new FormData(form);
+    const submitButton = form.querySelector(".btn-submit");
 
-      submitButton.disabled = true;
-      submitButton.textContent = "Enviando...";
+    submitButton.disabled = true;
+    submitButton.textContent = "Enviando...";
 
-      fetch(form.action, {
-        method: "POST",
-        body: formData,
-      })
-        .then((response) => {
-          if (response.ok) {
-            alert("Inscrição realizada com sucesso!");
-            form.reset();
-          } else {
-            alert("Erro ao enviar inscrição. Tente novamente.");
-          }
-        })
-        .catch((error) => {
-          console.error("Erro:", error);
-          alert("Erro de rede. Tente mais tarde.");
-        })
-        .finally(() => {
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          submitButton.textContent = "Enviado";
+
+          form.reset();
+
+          setTimeout(() => {
+            submitButton.disabled = false;
+            submitButton.textContent = "Enviar";
+          }, 1000);
+        } else {
+          alert("Erro ao enviar inscrição. Tente novamente.");
           submitButton.disabled = false;
           submitButton.textContent = "Enviar";
-        });
-    });
+        }
+      })
+      .catch((error) => {
+        console.error("Erro:", error);
+        alert("Erro de rede. Tente mais tarde.");
+        submitButton.disabled = false;
+        submitButton.textContent = "Enviar";
+      });
   });
+});
