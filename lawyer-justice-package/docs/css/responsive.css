@@ -309,3 +309,36 @@
 	
 	
 }
+@media (max-width: 768px) {
+  .email-text {
+    font-size: 1.8rem !important;
+  }
+
+.middle-bar{
+	margin: 0 !important;
+	padding: 0 !important;
+	
+  }
+  .font-bold {
+	font-weight: bold !important;
+  }
+  .clearfix{
+	border-radius: 8px !important;
+  }
+  .logo-column{
+margin: 0 !important;
+
+  }
+  .info-column{
+margin: 0 !important;
+  }
+ .mCS_img_loaded{
+	height: 10em !important;
+	width: 14em !important;
+	margin: 0px !important;
+	padding: 0px !important;
+
+ }
+ 
+
+}
