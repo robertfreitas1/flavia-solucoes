@@ -339,6 +339,18 @@ margin: 0 !important;
 	padding: 0px !important;
 
  }
+ .icon{
+	margin: 0 !important;
+	padding: 0 !important;
+	justify-content: center !important;
  
 
+}
+.inner-box{
+	display: flex !important;
+	flex-direction: column !important;
+	align-items: center !important;
+ 
+
+}
 }
