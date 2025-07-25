@@ -443,3 +443,46 @@ $(document).ready(function () {
   });
 });
 
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("newsletter-form");
+
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Obter data e hora atual no formato brasileiro
+      const agora = new Date();
+      const dataHora = agora.toLocaleDateString('pt-BR') + ' às ' + agora.toLocaleTimeString('pt-BR');
+
+      // Preencher o campo oculto
+      document.getElementById("newsletter-horario").value = dataHora;
+
+      const formData = new FormData(form);
+      const submitButton = form.querySelector(".btn-submit");
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Enviando...";
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          if (response.ok) {
+            alert("Inscrição realizada com sucesso!");
+            form.reset();
+          } else {
+            alert("Erro ao enviar inscrição. Tente novamente.");
+          }
+        })
+        .catch((error) => {
+          console.error("Erro:", error);
+          alert("Erro de rede. Tente mais tarde.");
+        })
+        .finally(() => {
+          submitButton.disabled = false;
+          submitButton.textContent = "Enviar";
+        });
+    });
+  });
