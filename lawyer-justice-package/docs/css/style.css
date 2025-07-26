@@ -2054,6 +2054,7 @@ ul,li{
 	position:relative;
 	display:block;
 	max-width:100%;
+	margin-bottom: 5em;
 }
 
 .default-form .form-group{
@@ -3001,7 +3002,7 @@ ul,li{
 
 .page-title{
 	position:relative;
-	padding:165px 0px 115px;
+	padding:60px 0px 20px;
 	background-size:cover;
 	background-position:center center;
 	background-repeat:no-repeat;
@@ -5535,7 +5536,7 @@ ul,li{
 
 .contact-section{
 	position:relative;
-	padding:70px 0px 0px;
+	padding:0px 0px 0px;
 }
 
 .contact-section .column{
@@ -6087,3 +6088,4 @@ ul,li{
 .checkout-section .payment-options .option-block .radio-block input[type="radio"]:checked+.radio-label:after{
 	opacity:1;
 }
+
