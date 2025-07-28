@@ -436,7 +436,7 @@ $(document).ready(function () {
       `*Assunto:* ${subject}\n` +
       `*Mensagem:*\n${message}`;
 
-    var numero = '5575999899951'; // Exemplo: '5575991123006' (Brasil + DDD + número)
+    var numero = '5575998487942'; // Exemplo: '5575991123006' (Brasil + DDD + número)
     var url = 'https://wa.me/' + numero + '?text=' + encodeURIComponent(texto);
 
     window.open(url, '_blank');
